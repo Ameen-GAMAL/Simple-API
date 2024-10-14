@@ -1,0 +1,163 @@
+{
+    "info": {
+      "_postman_id": "a1234567-b89c-4d12-3456-7890abcdef12",
+      "name": "Book API Tests",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "1. Get All Books",
+        "request": {
+          "method": "GET",
+          "header": [],
+          "url": {
+            "raw": "http://localhost:5000/books",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "5000",
+            "path": ["books"]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "2. Get Book by Valid ID",
+        "request": {
+          "method": "GET",
+          "header": [],
+          "url": {
+            "raw": "http://localhost:5000/books/1",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "5000",
+            "path": ["books", "1"]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "3. Get Book by Invalid ID",
+        "request": {
+          "method": "GET",
+          "header": [],
+          "url": {
+            "raw": "http://localhost:5000/books/999",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "5000",
+            "path": ["books", "999"]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "4. Add a New Book (Valid Data)",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "name": "Content-Type",
+              "value": "application/json",
+              "type": "text"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n    \"title\": \"The Great Gatsby\",\n    \"author\": \"F. Scott Fitzgerald\"\n}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          },
+          "url": {
+            "raw": "http://localhost:5000/books",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "5000",
+            "path": ["books"]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "5. Add a New Book (Missing Title)",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "name": "Content-Type",
+              "value": "application/json",
+              "type": "text"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n    \"author\": \"Unknown\"\n}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          },
+          "url": {
+            "raw": "http://localhost:5000/books",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "5000",
+            "path": ["books"]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "6. Update Book (Valid Data)",
+        "request": {
+          "method": "PUT",
+          "header": [
+            {
+              "key": "Content-Type",
+              "name": "Content-Type",
+              "value": "application/json",
+              "type": "text"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n    \"title\": \"1984 (Updated Edition)\",\n    \"author\": \"George Orwell\"\n}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          },
+          "url": {
+            "raw": "http://localhost:5000/books/1",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "5000",
+            "path": ["books", "1"]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "7. Delete Book (Invalid ID)",
+        "request": {
+          "method": "DELETE",
+          "header": [],
+          "url": {
+            "raw": "http://localhost:5000/books/999",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "5000",
+            "path": ["books", "999"]
+          }
+        },
+        "response": []
+      }
+    ]
+  }
+  
